@@ -53,7 +53,10 @@ def contents():
     tab_list = [
         db.get("name", "Unknown") for db in DATA_SOURCES if db.get("name") != "Ensembl"
     ]
-    tab_list.append("Other Databases")  # for TODO
+    # FIXME: 他のデータベースが追加されたら Other Databases は必要なくなるので、その時に消す
+    tab_list.append("Other Databases")
+
+    # create tabs
     tab1, tab2 = st.tabs(tab_list)
 
     # The Human Protein Atlas
@@ -69,7 +72,7 @@ def contents():
 
             if data is None or len(data) == 0:
                 st.markdown(f"No data found by query: {query}")
-            # TODO: リストで返ってくるので、リストの最初の要素を取得（検索候補は se）
+            # TODO: リストで返ってくるので、リストの最初の要素を取得（検索候補は select で選べるように）
             # TODO: API からデータ取得
             # TODO: データを可視化
 
