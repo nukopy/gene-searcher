@@ -1,12 +1,9 @@
-import asyncio
-import time
-
-import aiohttp
 import streamlit as st
 from constants import (
     DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
     DATA_SOURCES,
 )
+from search import search
 
 
 def sidebar():
@@ -18,7 +15,7 @@ def sidebar():
         st.sidebar.markdown(f"- [{name}]({url}) v{version}")
 
 
-async def contents():
+def contents():
     # header
     st.markdown(
         """
@@ -45,7 +42,7 @@ async def contents():
     result, diff = None, None
     if button:
         with st.spinner("Searching..."):
-            result, diff = await search(query)
+            result, diff = search(query)
 
     # search results
     st.markdown("## Search Results")
@@ -68,7 +65,10 @@ async def contents():
         if result is None:
             st.markdown(message_before_search)
         else:
-            st.markdown(f"Takes time: {diff:.4f} sec")
+            data = result.get(DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS, None)
+
+            if data is None or len(data) == 0:
+                st.markdown(f"No data found by query: {query}")
             # TODO: リストで返ってくるので、リストの最初の要素を取得（検索候補は se）
             # TODO: API からデータ取得
             # TODO: データを可視化
@@ -79,72 +79,15 @@ async def contents():
 
         # search result
         if result is None:
-            st.markdown(message_before_search)
+            # st.markdown(message_before_search)
+            st.markdown("This tab is under construction.")
         else:
-            st.markdown(f"Takes time: {diff:.4f} sec")
+            st.markdown("This tab is under construction.")
 
 
-async def fetch(
-    session: aiohttp.ClientSession,
-    url: str,
-    params: dict = None,
-    headers: dict = None,
-) -> dict:
-    res = await session.get(url, params=params, headers=headers)
-    data = await res.json()
-
-    return data
-
-
-async def search_hpa(session: aiohttp.ClientSession, query: str) -> (str, dict):
-    api_url = "https://www.proteinatlas.org/api/search_download.php"
-    # ref: https://www.proteinatlas.org/api/search_download.php?search=%22IL2RA%22&format=json&columns=g,gs,rnatsm,rnatd&compress=no
-    params = {
-        "search": query,
-        "format": "json",
-        "columns": "g,gs,rnatsm,rnatd",
-        "compress": "no",
-    }
-    headers = {"Content-Type": "application/json"}
-
-    return DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS, await fetch(
-        session, api_url, params, headers
-    )
-
-
-async def search(query: str) -> (dict, float):
-    print("start searching...")
-    start = time.time()
-
-    # trigger request tasks
-    tasks = []
-    results: list[(str, dict)] = []
-    data: dict[str, dict] = {}
-    async with aiohttp.ClientSession() as session:
-        # for Human Protein Atlas
-        tasks.append(search_hpa(session, query))
-
-        # for Other Databases
-        # TODO
-
-        # await all tasks
-        results = await asyncio.gather(*tasks)
-
-        # extract each result
-        for name, result in results:
-            print(f"result from {name}: {result}")
-            data[name] = result
-
-    end = time.time()
-    diff = end - start
-    print(f"end searching({diff:.4f} sec)")
-
-    return data, end - start
-
-
-async def main():
+def main():
     sidebar()
-    await contents()
+    contents()
 
 
-asyncio.run(main())
+main()
