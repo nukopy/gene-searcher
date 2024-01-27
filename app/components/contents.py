@@ -8,6 +8,8 @@ from constants import (
 from search import search
 
 MESSAGE_BEFORE_SEARCH = "Please input query and click search button."
+TAB_NAME_RNA_EXPRESSION_DATA = "RNA Expression Data"
+TAB_NAME_VACCINE_LIST = "Vaccine List"
 
 
 def header():
@@ -44,6 +46,64 @@ def search_input() -> str:
     return query, result, diff
 
 
+def tab_search_result_rna(heading: str, query: str, result: dict):
+    st.markdown(f"### {heading}")
+
+    # search result
+    if result is None:
+        st.markdown(MESSAGE_BEFORE_SEARCH)
+    else:
+        # The Human Protein Atlas
+        st.markdown(f"#### {DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS}")
+        data_hpa = result.get(DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS, None)
+
+        if data_hpa is None or len(data_hpa) == 0:
+            st.markdown(f"No data found by query: `{query}`")
+        else:
+            # TODO: リストで返ってくるので、リストの最初の要素を取得（検索候補は select で選べるように）
+            # TODO: API からデータ取得
+            # TODO: データを可視化
+            pass
+
+        # DICE
+        st.markdown(f"#### {DATA_SOURCE_NAME_DICE}")
+        data_dice = []
+        if data_dice is None or len(data_dice) == 0:
+            st.markdown(f"No data found by query: `{query}`")
+        else:
+            pass
+            # TODO: API からデータ取得
+            # TODO: データを可視化
+
+        # BioGPS
+        st.markdown(f"#### {DATA_SOURCE_NAME_BIOGPS}")
+        data_biogps = []
+        if data_biogps is None or len(data_biogps) == 0:
+            st.markdown(f"No data found by query: `{query}`")
+        else:
+            pass
+            # TODO: API からデータ取得
+            # TODO: データを可視化
+
+
+def tab_search_result_vaccine(heading: str, query: str, result: dict):
+    st.markdown(f"### {heading}")
+
+    # search result
+    if result is None:
+        st.markdown(MESSAGE_BEFORE_SEARCH)
+    else:
+        # BenchSci
+        st.markdown(f"#### {DATA_SOURCE_NAME_BENCHSCI}")
+        data_benchsci = []
+        if data_benchsci is None or len(data_benchsci) == 0:
+            st.markdown(f"No data found by query: `{query}`")
+        else:
+            # TODO: API からデータ取得
+            # TODO: データを可視化
+            pass
+
+
 def search_result(query: str, result: dict, diff: float):
     st.markdown("## Search Results")
 
@@ -53,59 +113,18 @@ def search_result(query: str, result: dict, diff: float):
 
     # create tabs
     tab_list = [
-        "RNA Expression Data",
-        "Vaccine List",
+        TAB_NAME_RNA_EXPRESSION_DATA,
+        TAB_NAME_VACCINE_LIST,
     ]
     tab_rna, tab_vaccine = st.tabs(tab_list)
+
+    # RNA Expression Data
     with tab_rna:
-        heading_rna = tab_list[0]
-        st.markdown(f"### {heading_rna}")
+        tab_search_result_rna(TAB_NAME_RNA_EXPRESSION_DATA, query, result)
 
-        # search result
-        if result is None:
-            st.markdown(MESSAGE_BEFORE_SEARCH)
-        else:
-            # The Human Protein Atlas
-            st.markdown(f"#### {DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS}")
-            data_hpa = result.get(DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS, None)
-
-            if data_hpa is None or len(data_hpa) == 0:
-                st.markdown(f"No data found by query: `{query}`")
-            # TODO: リストで返ってくるので、リストの最初の要素を取得（検索候補は select で選べるように）
-            # TODO: API からデータ取得
-            # TODO: データを可視化
-
-            # DICE
-            st.markdown(f"#### {DATA_SOURCE_NAME_DICE}")
-            data_dice = []
-            if data_dice is None or len(data_dice) == 0:
-                st.markdown(f"No data found by query: `{query}`")
-            else:
-                pass
-                # TODO: API からデータ取得
-                # TODO: データを可視化
-
-            # BioGPS
-            st.markdown(f"#### {DATA_SOURCE_NAME_BIOGPS}")
-            data_biogps = []
-            if data_biogps is None or len(data_biogps) == 0:
-                st.markdown(f"No data found by query: `{query}`")
-            else:
-                pass
-                # TODO: API からデータ取得
-                # TODO: データを可視化
-
-    # Other Databases
+    # Vaccine List
     with tab_vaccine:
-        heading_vaccine = tab_list[1]
-        st.markdown(f"### {heading_vaccine}")
-
-        # search result
-        if result is None:
-            st.markdown(MESSAGE_BEFORE_SEARCH)
-        else:
-            # BenchSci
-            st.markdown(f"#### {DATA_SOURCE_NAME_BENCHSCI}")
+        tab_search_result_vaccine(TAB_NAME_VACCINE_LIST, query, result)
 
 
 def contents():
