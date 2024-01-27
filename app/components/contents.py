@@ -5,7 +5,8 @@ from constants import (
     DATA_SOURCE_NAME_DICE,
     DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
 )
-from search import search
+
+from app.search.search import search
 
 MESSAGE_BEFORE_SEARCH = "Please input query and click search button."
 TAB_NAME_RNA_EXPRESSION_DATA = "RNA Expression Data"
@@ -25,15 +26,18 @@ def header():
 
 def search_input() -> str:
     # search input
-    query_type = st.radio(
-        "Query type",
-        ["Gene name", "Ensemble ID"],
-        index=0,
+    # query_type = st.radio(
+    #     "Query type",
+    #     ["Gene name", "Ensemble ID"],
+    #     index=0,
+    # )
+    # if query_type == "Gene name":
+    #     placeholder = "Gene name (e.g. IL2RA)"
+    # else:
+    #     placeholder = "Ensemble ID (e.g. ENSG00000134460)"
+    placeholder = (
+        "Input gene name (e.g. IL2RA, CD25) or Ensemble ID (e.g. ENSG00000134460)"
     )
-    if query_type == "Gene name":
-        placeholder = "Gene name (e.g. IL2RA)"
-    else:
-        placeholder = "Ensemble ID (e.g. ENSG00000134460)"
     query = st.text_input("Query", placeholder=placeholder)
 
     # search button to trigger search

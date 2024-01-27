@@ -3,7 +3,7 @@ import time
 
 import aiohttp
 import streamlit as st
-from constants import DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS
+from human_protein_atlas import search_hpa
 
 
 async def fetch(
@@ -18,22 +18,6 @@ async def fetch(
     return data
 
 
-async def search_hpa(session: aiohttp.ClientSession, query: str) -> (str, dict):
-    api_url = "https://www.proteinatlas.org/api/search_download.php"
-    # ref: https://www.proteinatlas.org/api/search_download.php?search=%22IL2RA%22&format=json&columns=g,gs,rnatsm,rnatd&compress=no
-    params = {
-        "search": query,
-        "format": "json",
-        "columns": "g,gs,rnatsm,rnatd",
-        "compress": "no",
-    }
-    headers = {"Content-Type": "application/json"}
-
-    return DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS, await fetch(
-        session, api_url, params, headers
-    )
-
-
 async def _search(query: str) -> (dict, float):
     print("start searching...")
     start = time.time()
@@ -43,10 +27,16 @@ async def _search(query: str) -> (dict, float):
     tasks = []
     results: list[(str, dict)] = []
     async with aiohttp.ClientSession() as session:
-        # for Human Protein Atlas
+        # fetch from Human Protein Atlas
         tasks.append(search_hpa(session, query))
 
-        # for Other Databases
+        # fetch from DICE
+        # TODO
+
+        # fetch from BioGPS
+        # TODO
+
+        # fetch from BenchSci
         # TODO
 
         # await all tasks
@@ -60,7 +50,7 @@ async def _search(query: str) -> (dict, float):
 
     end = time.time()
     diff = end - start
-    print(f"end searching({diff:.4f} sec)")
+    print(f"end searching ({diff:.4f} sec)")
 
     return data, end - start
 
