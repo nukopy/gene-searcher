@@ -23,7 +23,9 @@ Web application to collect gene information from target databases.
 ## Target databases
 
 - [The Human Protein Atlas](https://www.proteinatlas.org)
-- ...
+- [DICE | Database of Immune Cell eQTLs, Expression, Epigenomics](https://dice-database.org)
+- [BioGPS - your Gene Portal System](http://biogps.org)
+- [BenchSci: Reimagining Research](https://www.benchsci.com)
 
 ## Setup
 
