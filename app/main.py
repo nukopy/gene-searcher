@@ -6,6 +6,15 @@ from constants import (
 from search import search
 
 
+def meta():
+    st.set_page_config(
+        page_title="Gene Searcher",
+        page_icon="🧬",
+        layout="wide",
+        initial_sidebar_state="auto",
+    )
+
+
 def sidebar():
     st.sidebar.markdown("# Data Sources")
     for db in DATA_SOURCES:
@@ -89,6 +98,7 @@ def contents():
 
 
 def main():
+    meta()
     sidebar()
     contents()
 
