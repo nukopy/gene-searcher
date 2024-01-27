@@ -3,19 +3,8 @@ import time
 
 import aiohttp
 import streamlit as st
-from human_protein_atlas import search_hpa
 
-
-async def fetch(
-    session: aiohttp.ClientSession,
-    url: str,
-    params: dict = None,
-    headers: dict = None,
-) -> dict:
-    res = await session.get(url, params=params, headers=headers)
-    data = await res.json()
-
-    return data
+from app.search.human_protein_atlas import search_hpa
 
 
 async def _search(query: str) -> (dict, float):

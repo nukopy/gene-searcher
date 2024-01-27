@@ -1,11 +1,11 @@
 import streamlit as st
-from constants import (
+
+from app.constants import (
     DATA_SOURCE_NAME_BENCHSCI,
     DATA_SOURCE_NAME_BIOGPS,
     DATA_SOURCE_NAME_DICE,
     DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
 )
-
 from app.search.search import search
 
 MESSAGE_BEFORE_SEARCH = "Please input query and click search button."
@@ -35,6 +35,9 @@ def search_input() -> str:
     #     placeholder = "Gene name (e.g. IL2RA)"
     # else:
     #     placeholder = "Ensemble ID (e.g. ENSG00000134460)"
+
+    # search input
+    # note: 各データベースの Web ページでは自由にクエリを使用できるので、一旦その仕様に合わせてクエリのタイプは区別せず入力する
     placeholder = (
         "Input gene name (e.g. IL2RA, CD25) or Ensemble ID (e.g. ENSG00000134460)"
     )
@@ -64,10 +67,10 @@ def tab_search_result_rna(heading: str, query: str, result: dict):
         if data_hpa is None or len(data_hpa) == 0:
             st.markdown(f"No data found by query: `{query}`")
         else:
-            # TODO: リストで返ってくるので、リストの最初の要素を取得（検索候補は select で選べるように）
-            # TODO: API からデータ取得
-            # TODO: データを可視化
-            pass
+            genes = map(lambda x: x["Gene"], data_hpa)
+
+            # select gene
+            gene = st.selectbox("Select gene", genes)
 
         # DICE
         st.markdown(f"#### {DATA_SOURCE_NAME_DICE}")

@@ -1,6 +1,7 @@
 import aiohttp
-from constants import DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS
-from search import fetch
+
+from app.client import fetch
+from app.constants import DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS
 
 COLUMNS_BASIC_INFO = {
     "Gene": "g",

@@ -1,5 +1,6 @@
 import streamlit as st
-from constants import DATA_SOURCES
+
+from app.constants import DATA_SOURCES
 
 
 def sidebar():
