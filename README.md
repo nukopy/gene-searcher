@@ -1,17 +1,20 @@
 # gene-searcher
 
-- Extract gene information by gene name, for example `IL2RA`, from target databases 
+Web application to collect gene information from target databases.
 
-## Target databases 
+- URL
+  - [gene-searcher.streamlit.app](https://gene-searcher.streamlit.app/)
+
+## Target databases
 
 - [The Human Protein Atlas](https://www.proteinatlas.org)
 - ...
 
 ## Setup
 
-### Install Python 3.12.0
+### Install Python 3.11.7
 
-Official installer is [here](https://www.python.org/downloads/release/python-3120/)
+Official installer is [here](https://www.python.org/downloads/release/python-3117/)
 
 ### Install Poetry
 
@@ -23,4 +26,12 @@ pip install poetry
 
 ```sh
 poetry install
+```
+
+### Run
+
+Run the following command and open [http://localhost:8501/](http://localhost:8501/) on your browser.
+
+```sh
+streamlit run app/main.py
 ```
