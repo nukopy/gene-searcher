@@ -29,7 +29,7 @@ Web application to collect gene information from target databases.
 
 ## Target databases
 
-- [The Human Protein Atlas](https://www.proteinatlas.org)
+- [ ] [The Human Protein Atlas](https://www.proteinatlas.org)
   - [x] Tissue RNA Expression (e.g. [IL2RA](https://www.proteinatlas.org/ENSG00000134460-IL2RA/tissue))
   - [ ] Cell line RNA Expression (e.g. [IL2RA](https://www.proteinatlas.org/ENSG00000134460-IL2RA/cell+line))
 - [ ] [DICE | Database of Immune Cell eQTLs, Expression, Epigenomics](https://dice-database.org)
