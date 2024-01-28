@@ -20,12 +20,21 @@ Web application to collect gene information from target databases.
 - URL
   - [gene-searcher.streamlit.app](https://gene-searcher.streamlit.app/)
 
+## Features
+
+- Search gene information from target databases by gene name, Ensembl ID, and so on.
+- Show summary information of the gene
+- Visualize gene expression data
+- Download gene expression data as CSV file
+
 ## Target databases
 
 - [The Human Protein Atlas](https://www.proteinatlas.org)
-- [DICE | Database of Immune Cell eQTLs, Expression, Epigenomics](https://dice-database.org)
-- [BioGPS - your Gene Portal System](http://biogps.org)
-- [BenchSci: Reimagining Research](https://www.benchsci.com)
+  - [x] Tissue RNA Expression (e.g. [IL2RA](https://www.proteinatlas.org/ENSG00000134460-IL2RA/tissue))
+  - [ ] Cell line RNA Expression (e.g. [IL2RA](https://www.proteinatlas.org/ENSG00000134460-IL2RA/cell+line))
+- [ ] [DICE | Database of Immune Cell eQTLs, Expression, Epigenomics](https://dice-database.org)
+- [ ] [BioGPS - your Gene Portal System](http://biogps.org)
+- [ ] [BenchSci: Reimagining Research](https://www.benchsci.com)
 
 ## Setup
 
