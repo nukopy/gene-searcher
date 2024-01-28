@@ -38,6 +38,8 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ runner.os }}-python-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml') }}-lint
+      - name: Install Poetry
+        run: pip install poetry
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
@@ -76,6 +78,8 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ runner.os }}-python-${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml') }}-test
+      - name: Install Poetry
+        run: pip install poetry
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
