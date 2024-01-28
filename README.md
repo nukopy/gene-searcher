@@ -14,7 +14,7 @@
 [github-actions-release-badge]: https://github.com/nukopy/gene-searcher/actions/workflows/release.yml/badge.svg?branch=main
 [github-actions-release-url]: https://github.com/nukopy/gene-searcher/actions/workflows/release.yml?query=branch:main
 
-Web application to collect gene information from target databases.
+Web application to collect and summarize gene information from target databases
 
 - URL
   - [gene-searcher.streamlit.app](https://gene-searcher.streamlit.app/)
