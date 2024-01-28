@@ -57,7 +57,6 @@ jobs:
         python-version:
           - "3.12"
           - "3.11" # latest version on Streamlit Community Cloud
-          - "3.10"
       fail-fast: false
     needs: [format_and_lint]
     steps:
