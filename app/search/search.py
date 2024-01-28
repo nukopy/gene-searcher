@@ -4,11 +4,14 @@ import time
 import aiohttp
 import streamlit as st
 
+from app.logger import create_logger
 from app.search.human_protein_atlas import search_hpa
+
+logger = create_logger(__name__)
 
 
 async def _search(query: str) -> (dict, float):
-    print("start searching...")
+    logger.info("start searching...")
     start = time.time()
 
     # start async tasks
@@ -34,12 +37,12 @@ async def _search(query: str) -> (dict, float):
     # extract each result
     data: dict[str, dict] = {}
     for name, result in results:
-        print(f"result from {name}: {result}")
+        logger.info(f"add result from '{name}' to data")
         data[name] = result
 
     end = time.time()
     diff = end - start
-    print(f"end searching ({diff:.4f} sec)")
+    logger.info(f"end searching (takes {diff:.4f} sec)")
 
     return data, end - start
 
