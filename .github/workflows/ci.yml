@@ -1,14 +1,20 @@
-name: CI - format, lint, and test
+name: "CI - format, lint, and test"
 
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - ".gitignore"
+      - "*.md"
   pull_request:
     types:
       - opened
       - synchronize
       - reopened
+    paths-ignore:
+      - ".gitignore"
+      - "*.md"
 
 jobs:
   format_and_lint:
