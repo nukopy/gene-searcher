@@ -3,11 +3,19 @@ import aiohttp
 from app.client import fetch
 from app.constants import DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS
 
-COLUMNS_BASIC_INFO = {
+# API docs: https://www.proteinatlas.org/about/help/dataaccess
+# example: https://www.proteinatlas.org/ENSG00000134460-IL2RA/tissue
+COLUMNS_GENERAL_INFO = {
     "Gene": "g",
     "Gene synonym": "gs",
     "Ensembl": "eg",
     "Gene description": "gd",
+}
+
+COLUMNS_HUMAN_PROTEIN_ATLAS = {
+    "Tissue expression cluster": "ectissue",
+    "RNA tissue specificity": "rnats",
+    "RNA tissue distribution": "rnatd",
 }
 
 COLUMNS_RNA_EXPRESSION = {
@@ -75,7 +83,9 @@ async def search_hpa(session: aiohttp.ClientSession, query: str) -> (str, dict):
 
     # create params
     columns = ",".join(
-        list(COLUMNS_BASIC_INFO.values) + list(COLUMNS_RNA_EXPRESSION.values)
+        list(COLUMNS_GENERAL_INFO.values())
+        + list(COLUMNS_HUMAN_PROTEIN_ATLAS.values())
+        + list(COLUMNS_RNA_EXPRESSION.values())
     )
     params = {
         "search": query,
