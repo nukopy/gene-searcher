@@ -36,10 +36,10 @@ test: ## Run tests
 	coverage report --show-missing --fail-under=100
 	coverage html
 
+# TODO: coverage combine
 test-with-coverage: ## [for CI] Run tests with coverage
 	@set -ex; \
 	coverage run -m pytest -v tests; \
-	coverage combine; \
 	coverage report --show-missing --fail-under=100; \
 	coverage html
 
