@@ -1,0 +1,51 @@
+﻿tissue,organ,nTPM
+Cerebral cortex,Brain,1.7
+Cerebellum,Brain,0.7
+Basal ganglia,Brain,2.3
+Hypothalamus,Brain,2.3
+Midbrain,Brain,2.8
+Amygdala,Brain,2.4
+Choroid plexus,Brain,4.9
+Hippocampal formation,Brain,2.1
+Spinal cord,Brain,2.7
+Retina,Brain,0.3
+Thyroid gland,Endocrine tissues,11.7
+Parathyroid gland,Endocrine tissues,2.1
+Adrenal gland,Endocrine tissues,7.2
+Pituitary gland,Endocrine tissues,4.4
+Lung,Lung,43.1
+Salivary gland,Proximal digestive tract,7.8
+Esophagus,Proximal digestive tract,11.2
+Tongue,Proximal digestive tract,9.8
+Stomach,Gastrointestinal tract,15.9
+Duodenum,Gastrointestinal tract,15.8
+Small intestine,Gastrointestinal tract,15.2
+Colon,Gastrointestinal tract,11.9
+Rectum,Gastrointestinal tract,10.5
+Liver,Liver & Gallbladder,19
+Gallbladder,Liver & Gallbladder,22.4
+Pancreas,Pancreas,11.2
+Kidney,Kidney & Urinary bladder,13.6
+Urinary bladder,Kidney & Urinary bladder,24.8
+Testis,Male reproductive system,3.1
+Epididymis,Male reproductive system,4.4
+Seminal vesicle,Male reproductive system,5.1
+Prostate,Male reproductive system,10.1
+Vagina,Breast & Fefalse reproductive system,12.3
+Ovary,Breast & Fefalse reproductive system,3.6
+Fallopian tube,Breast & Female reproductive system,18.2
+Endometrium,Breast & Female reproductive system,14.5
+Cervix,Breast & Female reproductive system,20.8
+Placenta,Breast & Female reproductive system,15.5
+Breast,Breast & Female reproductive system,17.7
+Heart muscle,Muscle tissues,17.2
+Smooth muscle,Muscle tissues,11.6
+Skeletal muscle,Muscle tissues,6.8
+Adipose tissue,Connective & Soft tissue,18.7
+Skin,Skin,10.7
+Appendix,Bone marrow & Lymphoid tissue,19.9
+Spleen,Bone marrow & Lymphoid tissue,14.8
+Lymph node,Bone marrow & Lymphoid tissue,20.8
+Tonsil,Bone marrow & Lymphoid tissue,11.3
+Bone marrow,Bone marrow & Lymphoid tissue,11.5
+Thymus,Bone marrow & Lymphoid tissue,5.5
