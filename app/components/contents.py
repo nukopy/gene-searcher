@@ -1,30 +1,29 @@
 import streamlit as st
 
-from app.constants import (
-    DATA_SOURCE_NAME_BENCHSCI,
-    DATA_SOURCE_NAME_BIOGPS,
-    DATA_SOURCE_NAME_DICE,
-    DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
+from app.components.tabs import (
+    tab_search_result_rna,
+    tab_search_result_vaccine,
 )
+from app.constants import (
+    TAB_NAME_RNA_EXPRESSION_DATA,
+    TAB_NAME_VACCINE_LIST,
+)
+from app.logger import create_logger
 from app.search.search import search
 
-MESSAGE_BEFORE_SEARCH = "Please input query and click search button."
-TAB_NAME_RNA_EXPRESSION_DATA = "RNA Expression Data"
-TAB_NAME_VACCINE_LIST = "Vaccine List"
+logger = create_logger(__name__)
 
 
 def header():
-    # header
+    st.header("# Gene Searcher")
     st.markdown(
         """
-        # Gene Searcher
-
         Gene Searcher is a tool for searching for genes and their associated
         """
     )
 
 
-def search_input() -> str:
+def input_query() -> str:
     # search input
     # query_type = st.radio(
     #     "Query type",
@@ -45,78 +44,26 @@ def search_input() -> str:
 
     # search button to trigger search
     button = st.button("Search")
-    result, diff = None, None
+
+    if "result" not in st.session_state and "diff" not in st.session_state:
+        st.session_state["result"] = None
+        st.session_state["diff"] = None
+
     if button:
         with st.spinner("Searching..."):
             result, diff = search(query)
+            st.session_state["result"] = result
+            st.session_state["diff"] = diff
 
-    return query, result, diff
-
-
-def tab_search_result_rna(heading: str, query: str, result: dict):
-    st.markdown(f"### {heading}")
-
-    # search result
-    if result is None:
-        st.markdown(MESSAGE_BEFORE_SEARCH)
-    else:
-        # The Human Protein Atlas
-        st.markdown(f"#### {DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS}")
-        data_hpa = result.get(DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS, None)
-
-        if data_hpa is None or len(data_hpa) == 0:
-            st.markdown(f"No data found by query: `{query}`")
-        else:
-            genes = map(lambda x: x["Gene"], data_hpa)
-
-            # select gene
-            gene = st.selectbox("Select gene", genes)
-
-        # DICE
-        st.markdown(f"#### {DATA_SOURCE_NAME_DICE}")
-        data_dice = []
-        if data_dice is None or len(data_dice) == 0:
-            st.markdown(f"No data found by query: `{query}`")
-        else:
-            pass
-            # TODO: API からデータ取得
-            # TODO: データを可視化
-
-        # BioGPS
-        st.markdown(f"#### {DATA_SOURCE_NAME_BIOGPS}")
-        data_biogps = []
-        if data_biogps is None or len(data_biogps) == 0:
-            st.markdown(f"No data found by query: `{query}`")
-        else:
-            pass
-            # TODO: API からデータ取得
-            # TODO: データを可視化
-
-
-def tab_search_result_vaccine(heading: str, query: str, result: dict):
-    st.markdown(f"### {heading}")
-
-    # search result
-    if result is None:
-        st.markdown(MESSAGE_BEFORE_SEARCH)
-    else:
-        # BenchSci
-        st.markdown(f"#### {DATA_SOURCE_NAME_BENCHSCI}")
-        data_benchsci = []
-        if data_benchsci is None or len(data_benchsci) == 0:
-            st.markdown(f"No data found by query: `{query}`")
-        else:
-            # TODO: API からデータ取得
-            # TODO: データを可視化
-            pass
+    return query, st.session_state["result"], st.session_state["diff"]
 
 
 def search_result(query: str, result: dict, diff: float):
-    st.markdown("## Search Results")
+    st.markdown("## Search Results from Databases")
 
     # 検索にかかった時間
     if diff is not None:
-        st.markdown(f"takes {diff:.4f} seconds")
+        st.markdown(f"search takes {diff:.2f} seconds")
 
     # create tabs
     tab_list = [
@@ -139,7 +86,7 @@ def contents():
     header()
 
     # search input
-    query, result, diff = search_input()
+    query, result, diff = input_query()
 
     # search results
     search_result(query, result, diff)

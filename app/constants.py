@@ -1,3 +1,4 @@
+# data sources
 DATA_SOURCE_NAME_ENSEMBL = "Ensembl"
 DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS = "The Human Protein Atlas"
 DATA_SOURCE_NAME_DICE = "DICE"
@@ -31,3 +32,8 @@ DATA_SOURCES: list[dict[str, str]] = [
         "url": "https://www.benchsci.com",
     },
 ]
+
+# for tabs in contents
+MESSAGE_BEFORE_SEARCH = "Please input query and click search button."
+TAB_NAME_RNA_EXPRESSION_DATA = "RNA Expression Data"
+TAB_NAME_VACCINE_LIST = "Vaccine List"
