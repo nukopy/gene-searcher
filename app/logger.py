@@ -12,26 +12,27 @@ def create_logger(
     log_format: str = DEFAULT_LOG_FORMAT,
     date_format: str = DEFAULT_LOG_DATE_FORMAT,
 ) -> Logger:
-    # get logger
-    logger = getLogger(name)
+    try:
+        # get logger
+        logger = getLogger(name)
 
-    # clear handlers
-    if logger.hasHandlers():
-        logger.handlers.clear()
+        # clear handlers
+        if logger.hasHandlers():
+            logger.handlers.clear()
 
-    # set log level
-    logger.setLevel(level)
+        # set log level
+        logger.setLevel(level)
 
-    # create handler
-    handler = StreamHandler(sys.stdout)
-    handler.setLevel(level)
-    fmt = Formatter(log_format, data_format)
-    handler.setFormatter(fmt)
+        # create handler
+        handler = StreamHandler(sys.stdout)
+        handler.setLevel(level)
+        fmt = Formatter(log_format, date_format)
+        handler.setFormatter(fmt)
 
-    # add handler
-    logger.addHandler(handler)
+        # add handler
+        logger.addHandler(handler)
 
-    # disable propagation
-    logger.propagate = False
-
-    return logger
+        # disable propagation
+        logger.propagate = False
+    except Exception as e:
+        raise Exception(f"Failed to create logger of module '{name}': {e}")  # noqa: B904
