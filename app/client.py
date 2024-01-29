@@ -21,6 +21,7 @@ async def fetch(
     else:
         headers = {**default_headers, **headers}
 
+    # fetch data
     try:
         res = await session.get(
             url, params=params, headers=headers, timeout=timeout_seconds
@@ -31,10 +32,12 @@ async def fetch(
 
         return data
     except aiohttp.ClientError as e:
-        logger.error(
-            f"failed to fetch data from {url} with status {res.status} due to client error: {e}"
-        )
-        raise e
+        msg = f"Error on fetch: failed to fetch data from {url} with status {res.status} due to client error"
+        logger.error(msg)
+
+        raise Exception(msg) from e
     except Exception as e:
-        logger.error(f"failed to fetch data from {url} due to unexpected error: {e}")
-        raise e
+        msg = f"Error on fetch: failed to fetch data from {url} due to unexpected error"
+        logger.error(msg)
+
+        raise Exception(msg) from e

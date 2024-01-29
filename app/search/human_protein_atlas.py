@@ -2,6 +2,10 @@ import aiohttp
 
 from app.client import fetch
 from app.constants import DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS
+from app.logger import create_logger
+
+logger = create_logger(__name__)
+
 
 # API docs: https://www.proteinatlas.org/about/help/dataaccess
 # example: https://www.proteinatlas.org/ENSG00000134460-IL2RA/tissue
@@ -79,6 +83,7 @@ async def search_hpa(session: aiohttp.ClientSession, query: str) -> (str, dict):
     Example:
     - https://www.proteinatlas.org/api/search_download.php?search=%22IL2RA%22&format=json&columns=g,gs,rnatsm,rnatd&compress=no
     """
+
     api_url = "https://www.proteinatlas.org/api/search_download.php"
 
     # create params
@@ -95,6 +100,20 @@ async def search_hpa(session: aiohttp.ClientSession, query: str) -> (str, dict):
     }
     headers = {"Content-Type": "application/json"}
 
-    return DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS, await fetch(
-        session, api_url, params, headers
-    )
+    # fetch data from The Human Protein Atlas
+    try:
+        res = await fetch(session, api_url, params, headers)
+        return (
+            res,
+            DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
+        )
+    except aiohttp.ClientError as e:
+        msg = f"Error on search_hpa: failed to fetch data from {api_url} with status {res.status} due to client error"
+        logger.error(msg)
+
+        raise Exception(msg) from e
+    except Exception as e:
+        msg = f"Error on search_hpa: failed to fetch data from {api_url} due to unexpected error"
+        logger.error(msg)
+
+        raise Exception(msg) from e
