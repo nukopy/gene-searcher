@@ -10,7 +10,7 @@ def create_logger(
     name: str,
     level: int = INFO,
     log_format: str = DEFAULT_LOG_FORMAT,
-    data_format: str = DEFAULT_LOG_DATE_FORMAT,
+    date_format: str = DEFAULT_LOG_DATE_FORMAT,
 ) -> Logger:
     # get logger
     logger = getLogger(name)
