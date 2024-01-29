@@ -103,17 +103,18 @@ async def search_hpa(session: aiohttp.ClientSession, query: str) -> (str, dict):
     # fetch data from The Human Protein Atlas
     try:
         res = await fetch(session, api_url, params, headers)
+
         return (
-            res,
             DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
+            res,
         )
     except aiohttp.ClientError as e:
         msg = f"Error on search_hpa: failed to fetch data from {api_url} with status {res.status} due to client error"
         logger.error(msg)
 
-        raise Exception(msg) from e
+        raise Exception(f"{msg}: {e}") from e
     except Exception as e:
         msg = f"Error on search_hpa: failed to fetch data from {api_url} due to unexpected error"
         logger.error(msg)
 
-        raise Exception(msg) from e
+        raise Exception(f"{msg}: {e}") from e

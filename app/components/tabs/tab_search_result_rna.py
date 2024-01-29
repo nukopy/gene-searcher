@@ -1,5 +1,3 @@
-import json
-
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
@@ -24,9 +22,14 @@ def tab_inner_hpa(query: str, result: dict):
     st.markdown(f"### {DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS}")
     data_hpa = result.get(DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS, None)
 
-    # data が result から取得できなかった場合は早期リターン
+    # fetch 時にエラーが発生した場合は早期リターン
+    if isinstance(data_hpa, Exception):
+        st.error(f"Error on search: `{query}`", icon="🚨")
+        return
+
+    # data を result から取得できなかった場合は早期リターン
     if data_hpa is None or len(data_hpa) == 0:
-        st.markdown(f"No data found by query: `{query}`")
+        st.warning(f"No data found by query: `{query}`", icon="⚠️")
         return
 
     # select gene
@@ -145,29 +148,44 @@ def tab_inner_hpa(query: str, result: dict):
 
 def tab_inner_dice(query: str, result: dict):
     st.markdown(f"### {DATA_SOURCE_NAME_DICE}")
-    data_dice = []
+    data_dice = result.get(DATA_SOURCE_NAME_DICE, None)
+
+    # fetch 時にエラーが発生した場合は早期リターン
+    if isinstance(data_dice, Exception):
+        st.error(f"Error on search: `{query}`", icon="🚨")
+        return
+
+    # data を result から取得できなかった場合は早期リターン
     if data_dice is None or len(data_dice) == 0:
-        st.markdown(f"No data found by query: `{query}`")
+        st.warning(f"No data found by query: `{query}`", icon="⚠️")
         return
 
     # TODO: API からデータ取得
     # TODO: データを可視化
+    st.info("TODO: fetch & visualize data")
 
 
 def tab_inner_biogps(query: str, result: dict):
     st.markdown(f"### {DATA_SOURCE_NAME_BIOGPS}")
-    data_biogps = []
+    data_biogps = result.get(DATA_SOURCE_NAME_BIOGPS, None)
+
+    # fetch 時にエラーが発生した場合は早期リターン
+    if isinstance(data_biogps, Exception):
+        st.error(f"Error on search: `{query}`", icon="🚨")
+        return
+
+    # data を result から取得できなかった場合は早期リターン
     if data_biogps is None or len(data_biogps) == 0:
-        st.markdown(f"No data found by query: `{query}`")
+        st.warning(f"No data found by query: `{query}`", icon="⚠️")
         return
 
     # TODO: API からデータ取得
     # TODO: データを可視化
+    st.info("TODO: fetch & visualize data")
 
 
 def tab_search_result_rna(heading: str, query: str, result: dict):
     # search result
-    logger.info(f"result: {json.dumps(result, indent=2)}")
     if result is None:
         st.markdown(MESSAGE_BEFORE_SEARCH)
         return
