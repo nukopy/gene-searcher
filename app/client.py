@@ -19,7 +19,7 @@ async def fetch(
     if headers is None:
         headers = default_headers
     else:
-        headers = default_headers.update(headers)
+        headers = {**default_headers, **headers}
 
     try:
         res = await session.get(
