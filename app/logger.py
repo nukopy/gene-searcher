@@ -34,5 +34,7 @@ def create_logger(
 
         # disable propagation
         logger.propagate = False
+
+        return logger
     except Exception as e:
         raise Exception(f"Failed to create logger of module '{name}': {e}")  # noqa: B904
