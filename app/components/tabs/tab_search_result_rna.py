@@ -24,7 +24,7 @@ def tab_inner_hpa(query: str, result: dict):
 
     # fetch 時にエラーが発生した場合は早期リターン
     if isinstance(data_hpa, Exception):
-        st.error(f"Error on search: `{query}`", icon="🚨")
+        st.error(f"Error on search: `{query}`\n\n{data_hpa}", icon="🚨")
         return
 
     # data を result から取得できなかった場合は早期リターン
@@ -152,7 +152,7 @@ def tab_inner_dice(query: str, result: dict):
 
     # fetch 時にエラーが発生した場合は早期リターン
     if isinstance(data_dice, Exception):
-        st.error(f"Error on search: `{query}`", icon="🚨")
+        st.error(f"Error on search: `{query}`\n\n{data_dice}", icon="🚨")
         return
 
     # data を result から取得できなかった場合は早期リターン
@@ -171,7 +171,7 @@ def tab_inner_biogps(query: str, result: dict):
 
     # fetch 時にエラーが発生した場合は早期リターン
     if isinstance(data_biogps, Exception):
-        st.error(f"Error on search: `{query}`", icon="🚨")
+        st.error(f"Error on search: `{query}`\n\n{data_biogps}", icon="🚨")
         return
 
     # data を result から取得できなかった場合は早期リターン
