@@ -1,8 +1,18 @@
+from typing import Union
+
 import aiohttp
 
+from app.errors import FetchClientError, FetchClientResponseError, FetchUnexpectedError
 from app.logger import create_logger
 
 logger = create_logger(__name__)
+
+FetchResponseType = Union[dict, list]
+
+DEFAULT_HEADERS = {
+    "Content-Type": "application/json",
+}
+DEFAULT_TIMEOUT_SECONDS = 30
 
 
 async def fetch(
@@ -10,16 +20,10 @@ async def fetch(
     url: str,
     params: dict = None,
     headers: dict = None,
-    timeout_seconds: int = 30,
-) -> dict:
+    timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
+) -> FetchResponseType:
     # setup HTTP headers
-    default_headers = {
-        "Content-Type": "application/json",
-    }
-    if headers is None:
-        headers = default_headers
-    else:
-        headers = {**default_headers, **headers}
+    headers = {**DEFAULT_HEADERS, **(headers or {})}
 
     # fetch data
     try:
@@ -31,13 +35,18 @@ async def fetch(
         data = await res.json()
 
         return data
-    except aiohttp.ClientError as e:
-        msg = f"Error on fetch: failed to fetch data from {url} with status {res.status} due to client error"
+    except aiohttp.ClientResponseError as e:
+        msg = f"Error on fetch: failed to fetch data from {url} with status {e.status} due to response error"
         logger.error(msg)
 
-        raise Exception(msg) from e
+        raise FetchClientResponseError(msg) from e
+    except aiohttp.ClientError as e:
+        msg = f"Error on fetch: failed to fetch data from {url} due to client error"
+        logger.error(msg)
+
+        raise FetchClientError(msg) from e
     except Exception as e:
         msg = f"Error on fetch: failed to fetch data from {url} due to unexpected error"
         logger.error(msg)
 
-        raise Exception(msg) from e
+        raise FetchUnexpectedError(msg) from e
