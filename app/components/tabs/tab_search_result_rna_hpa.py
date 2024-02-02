@@ -135,7 +135,9 @@ def tab_inner_hpa(query: str, result: dict):
     st.plotly_chart(fig, use_container_width=True)
 
     # write table for download
-    toggle = st.toggle("Show source data of above chart")
+    toggle = st.toggle(
+        "Show source data of above chart", key=f"toggle_show_source_data_hpa_{gene}"
+    )
     if toggle:
         st.markdown(
             "As you mouse over the table below, you can download CSV file from popup."
