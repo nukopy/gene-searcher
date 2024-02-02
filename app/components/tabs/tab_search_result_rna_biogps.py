@@ -22,6 +22,17 @@ def tab_inner_biogps(query: str, result: dict):
         st.warning(f"No data found by query: `{query}`", icon="⚠️")
         return
 
-    # TODO: API からデータ取得
-    # TODO: データを可視化
+    # TODO: コンポーネントを実装したら以下のウィジェットは削除する
     st.info("TODO: fetch & visualize data")
+
+    # write link
+    # TODO
+
+    # データの前処理
+    # TODO
+
+    # write chart
+    # TODO: データを可視化
+
+    # write table for download
+    # TODO
