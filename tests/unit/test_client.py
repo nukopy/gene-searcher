@@ -25,9 +25,10 @@ async def test_fetch_success(mock_aioresponse: aioresponses):
     # when (操作):
     async with aiohttp.ClientSession() as session:
         res = await fetch(session, url)
+        actual = await res.json()
 
         #  then (期待する結果):
-        assert res == expected
+        assert actual == expected
 
 
 @pytest.mark.asyncio

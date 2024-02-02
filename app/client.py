@@ -1,13 +1,9 @@
-from typing import Union
-
 import aiohttp
 
 from app.errors import FetchClientError, FetchClientResponseError, FetchUnexpectedError
 from app.logger import create_logger
 
 logger = create_logger(__name__)
-
-FetchResponseType = Union[dict, list]
 
 DEFAULT_HEADERS = {
     "Content-Type": "application/json",
@@ -21,7 +17,7 @@ async def fetch(
     params: dict = None,
     headers: dict = None,
     timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
-) -> FetchResponseType:
+) -> aiohttp.ClientResponse:
     # setup HTTP headers
     headers = {**DEFAULT_HEADERS, **(headers or {})}
 
@@ -32,9 +28,8 @@ async def fetch(
         )
         res.raise_for_status()  # raise error if status is not 200-299
         logger.info(f"fetch data successfully from {res.url}")
-        data = await res.json()
 
-        return data
+        return res
     except aiohttp.ClientResponseError as e:
         msg = f"Error on fetch: failed to fetch data from {url} with status {e.status} due to response error"
         logger.error(msg)
