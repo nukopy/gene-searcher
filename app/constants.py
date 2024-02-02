@@ -5,31 +5,50 @@ DATA_SOURCE_NAME_DICE = "DICE"
 DATA_SOURCE_NAME_BIOGPS = "BioGPS"
 DATA_SOURCE_NAME_BENCHSCI = "BenchSci"
 
-DATA_SOURCES: list[dict[str, str]] = [
+DATA_SOURCES: list[dict] = [
     {
         "name": DATA_SOURCE_NAME_ENSEMBL,
-        "version": "109",
         "url": "https://www.ensembl.org",
+        "version": "v109",
+        # release Ensembl v109: https://www.ensembl.info/2023/01/13/retirement-of-ensembl-us-west-aws-mirror/
+        "release_date": "2023/01/13",
     },
     {
         "name": DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
-        "version": "23.0",
         "url": "https://www.proteinatlas.org",
+        "version": "v23.0",
+        "release_date": "2023/06/19",
+        "datasets": [
+            "The Human Protein Atlas v23.0",
+            "Ensembl v109",
+        ],
     },
     {
         "name": DATA_SOURCE_NAME_DICE,
-        "version": "TODO",  # TODO: バージョン情報
         "url": "https://dice-database.org",
+        "version": "DICE-DB 1",
+        "release_date": "2022/02/23",
+        "datasets": [
+            "GRCh37 .p19",
+        ],
     },
     {
         "name": DATA_SOURCE_NAME_BIOGPS,
-        "version": "TODO",  # TODO: バージョン情報
         "url": "https://biogps.org",
+        "version": "TODO",  # TODO: バージョン情報
+        "release_date": "TODO",
+        "datasets": [
+            "TODO",
+        ],
     },
     {
         "name": DATA_SOURCE_NAME_BENCHSCI,
-        "version": "TODO",  # TODO: バージョン情報
         "url": "https://www.benchsci.com",
+        "version": "TODO",  # TODO: バージョン情報
+        "release_date": "TODO",
+        "datasets": [
+            "TODO",
+        ],
     },
 ]
 
