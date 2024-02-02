@@ -1,3 +1,5 @@
+from typing import Tuple
+
 import aiohttp
 
 from app.client import fetch
@@ -77,7 +79,7 @@ COLUMNS_RNA_EXPRESSION = {
 }
 
 
-async def search_hpa(session: aiohttp.ClientSession, query: str) -> (str, dict):
+async def search_hpa(session: aiohttp.ClientSession, query: str) -> Tuple[str, dict]:
     """
     The Human Protein Atlas API docs: https://www.proteinatlas.org/about/help/dataaccess
 
@@ -104,10 +106,11 @@ async def search_hpa(session: aiohttp.ClientSession, query: str) -> (str, dict):
     # fetch data from The Human Protein Atlas
     try:
         res = await fetch(session, api_url, params, headers)
+        data: dict = await res.json()
 
         return (
             DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
-            res,
+            data,
         )
     except FetchClientResponseError as e:
         msg = f"Error on search_hpa: failed to fetch data from {api_url} due to response error"
