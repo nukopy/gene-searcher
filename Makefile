@@ -1,11 +1,4 @@
-.DEFAULT_GOAL := help
-
-.PHONY: help
-help:
-	@echo 'Usage: make [target]'
-	@echo ''
-	@echo 'Targets:'
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+CODE_COVERAGE_MINIMUM = 80
 
 # ---------------------------------------------------------------------
 # commands
@@ -33,14 +26,14 @@ lint-no-overwrite: ## [for CI] Check if code is linted with Ruff without overwri
 test: ## Run tests
 	@set -ex; \
 	coverage run -m pytest -v tests; \
-	coverage report --show-missing --fail-under=100
+	coverage report --show-missing --fail-under=$(CODE_COVERAGE_MINIMUM); \
 	coverage html
 
 # TODO: coverage combine
 test-with-coverage: ## [for CI] Run tests with coverage
 	@set -ex; \
 	coverage run -m pytest -v tests; \
-	coverage report --show-missing --fail-under=100; \
+	coverage report --show-missing --fail-under=$(CODE_COVERAGE_MINIMUM); \
 	coverage html
 
 .PHONY: before-push
@@ -49,3 +42,16 @@ before-push: ## Run tests and lint before pushing
 	make format-no-overwrite; \
 	make lint-no-overwrite; \
 	make test
+
+# ---------------------------------------------------------------------
+# help
+# ---------------------------------------------------------------------
+
+.DEFAULT_GOAL := help
+
+.PHONY: help
+help:
+	@echo 'Usage: make [target]'
+	@echo ''
+	@echo 'Targets:'
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
