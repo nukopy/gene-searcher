@@ -1,4 +1,17 @@
 # ------------------------------------------------------------------------
+# for logger
+# ------------------------------------------------------------------------
+
+
+class LoggerCreationError(Exception):
+    """Error occurred during creating logger."""
+
+
+class LoggerStreamHandlerCreationError(Exception):
+    """Error occurred during creating StreamHandler."""
+
+
+# ------------------------------------------------------------------------
 # for HTTP client
 # ------------------------------------------------------------------------
 
