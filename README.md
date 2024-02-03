@@ -31,8 +31,8 @@ Web application to collect and summarize gene information from target databases
 - [ ] [The Human Protein Atlas](https://www.proteinatlas.org)
   - [x] Tissue RNA Expression (e.g. [IL2RA](https://www.proteinatlas.org/ENSG00000134460-IL2RA/tissue))
   - [ ] Cell line RNA Expression (e.g. [IL2RA](https://www.proteinatlas.org/ENSG00000134460-IL2RA/cell+line))
-- [ ] [DICE | Database of Immune Cell eQTLs, Expression, Epigenomics](https://dice-database.org)
-- [ ] [BioGPS - your Gene Portal System](http://biogps.org)
+- [x] [DICE | Database of Immune Cell eQTLs, Expression, Epigenomics](https://dice-database.org)
+- [x] [BioGPS - your Gene Portal System](http://biogps.org)
 - [ ] [BenchSci: Reimagining Research](https://www.benchsci.com)
 
 ## Setup
