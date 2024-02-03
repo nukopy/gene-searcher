@@ -46,7 +46,13 @@ def tab_inner_dice(query: str, result: dict):
     # write link
     gene = query.upper()
     link = f"https://dice-database.org/genes/{gene}"
-    st.markdown(f"Data source: {link}")
+    st.markdown(
+        f"""
+        #### General Information
+
+        Data source: {link}
+        """
+    )
 
     # ------------------------------
     # データの前処理
@@ -179,6 +185,7 @@ def tab_inner_dice(query: str, result: dict):
             "zeroline": True,
         },
     )
+    st.markdown("#### Data")
     st.plotly_chart(fig, use_container_width=False)
     # if mobile use_container_width=True
     # if desktop use_container_width=False

@@ -43,9 +43,12 @@ def tab_inner_hpa(query: str, result: dict):
     # write gene info
     gene_name = selected_gene_data.get("Gene", "Unknown")
     ensembl_id = selected_gene_data.get("Ensembl", "Unknown")
+    summary_link = f"https://www.proteinatlas.org/{ensembl_id}-{gene_name}"
     st.markdown(
         f"""
-        General Information:
+        #### General Information
+
+        Data source: {summary_link}
 
         - Gene: `{selected_gene_data.get("Gene", "Unknown")}`
         - Gene synonyms: {", ".join(selected_gene_data.get("Gene synonym", []))}
@@ -85,15 +88,13 @@ def tab_inner_hpa(query: str, result: dict):
     }
     df_tissue = pd.DataFrame(tissue_data)
 
-    # create link
-    link = f"https://www.proteinatlas.org/{ensembl_id}-{gene_name}/tissue"
-
     # write tissue metadata
+    tissue_link = f"https://www.proteinatlas.org/{ensembl_id}-{gene_name}/tissue"
     st.markdown(
         f"""
-        #### Tissue
+        #### Data: Tissue
 
-        Data source: {link}
+        Data source: {tissue_link}
 
         - Tissue expression cluster (RNA): {tissue_metadata.get("Tissue expression cluster", "Unknown")}
         - Tissue specificity (RNA): {tissue_metadata.get("RNA tissue specificity", "Unknown")}
