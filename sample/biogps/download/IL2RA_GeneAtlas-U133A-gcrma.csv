@@ -1,0 +1,263 @@
+Samples,206341_at,211269_s_at
+Yeast (background).1,-1.108,2.248
+Yeast (background).2,0.691,3.003
+Accumbens.1,-0.81,0.191
+Accumbens.2,0.131,1.366
+Adipose tissue.1,-0.762,-2.022
+Adipose tissue.2,0.034,-0.709
+Adipose tissue omental.1,-0.527,0.871
+Adipose tissue omental.2,-0.274,1.804
+Adrenal cortex.1,-0.518,-0.235
+Adrenal cortex.2,0.278,0.767
+Airway epithelial cells.1,-0.724,-2.245
+Airway epithelial cells.2,0.289,-1.139
+Alveolar macrophages.1,-0.509,-1.396
+Alveolar macrophages.2,1.735,1.368
+Amniotic fluid.1,-0.446,0.082
+Amniotic fluid.2,0.206,0.635
+Amygdala.1,-1.135,0.131
+Amygdala.2,-0.447,1.099
+Astrocytes.1,-1.611,-1.66
+Astrocytes.2,0.126,-0.07
+Blood.1,0.108,-0.239
+Blood.2,1.556,1.143
+Bone marrow.1,-0.234,0.518
+Bone marrow.2,0.092,1.831
+Breast.1,-0.713,-1.94
+Breast.2,0.083,-0.558
+Breast ductal cells.1,-1.129,-0.606
+Breast ductal cells.2,-0.478,0.741
+Breast epithelial cells.1,-1.209,-3.316
+Breast epithelial cells.2,-0.593,-3.075
+Breast lobular cells.1,-1.17,-0.618
+Breast lobular cells.2,-0.265,0.799
+Breast stroma.1,-1.061,-0.651
+Breast stroma.2,0.821,2.045
+Bronchial epithelial cells.1,-0.977,-2.419
+Bronchial epithelial cells.2,-0.361,-1.175
+Bronchus.1,-0.498,0.198
+Bronchus.2,-0.425,0.613
+Cd14+ monocytes.1,-0.555,-1.18
+Cd14+ monocytes.2,0.096,-0.247
+Cd3+ t cells.1,2.992,0.95
+Cd3+ t cells.2,4.874,2.471
+Cd31+ cells.1,3.281,3.533
+Cd31+ cells.2,8.637,8.233
+Cd34+ cells.1,-0.909,-2.2
+Cd34+ cells.2,-0.258,-1.371
+Cd4+ t cells.1,4.349,3.915
+Cd4+ t cells.2,6.593,6.126
+Cd4+cd25+high regulatory t cells.1,4.667,3.108
+Cd4+cd25+high regulatory t cells.2,11.254,8.844
+Cd49a+ cells.1,-1.208,-1.334
+Cd49a+ cells.2,0.529,0.187
+Cecum.1,0.066,0.044
+Cecum.2,0.573,1.979
+Centroblasts.1,-1.194,-2.051
+Centroblasts.2,0.905,0.438
+Centrocytes.1,-0.995,-1.494
+Centrocytes.2,-0.416,2.445
+Cerebellum.1,-1.128,-0.206
+Cerebellum.2,-0.332,0.831
+Cerebral cortex.1,-1.285,-0.299
+Cerebral cortex.2,-0.127,0.737
+Cervix.1,-0.497,-1.1
+Cervix.2,-0.28,2.424
+Chorion villus cells.1,-0.724,-1.517
+Chorion villus cells.2,0.362,-1.378
+Colon.1,-0.57,-0.573
+Colon.2,0.697,1.5
+Colonic mucosa.1,-0.148,-1.239
+Colonic mucosa.2,1.227,0.558
+Coronary artery.1,-0.736,1.386
+Coronary artery.2,0.35,1.662
+Corpus callosum.1,-0.946,0.03
+Corpus callosum.2,-0.367,1.62
+Cultured endothelial progenitor cells.1,2.746,11.273
+Cultured endothelial progenitor cells.2,7.414,13.312
+Deltoid muscle.1,-0.254,0.102
+Deltoid muscle.2,0.868,0.966
+Dorsal root ganglia.1,-1.273,-0.069
+Dorsal root ganglia.2,-0.26,1.486
+Endometrial endothelial cell.1,-1.201,-2.166
+Endometrial endothelial cell.2,-0.26,-1.544
+Endometrium.1,-0.701,-1.173
+Endometrium.2,0.022,-0.067
+Entorhinal cortex.1,-1.287,-1.207
+Entorhinal cortex.2,-0.491,-0.033
+Entorhinal cortex layer ii stellate island cells.1,-1.223,0.954
+Entorhinal cortex layer ii stellate island cells.2,0.007,2.164
+Epididymis corpus.1,-1.217,-2.163
+Epididymis corpus.2,-1.0,-0.988
+Esophagus.1,-1.3,0.106
+Esophagus.2,-0.721,0.659
+Fallopian tube epithelium.1,-1.499,-3.899
+Fallopian tube epithelium.2,-0.449,-2.655
+Fetal cartilage.1,-0.642,-1.931
+Fetal cartilage.2,0.769,-0.964
+Frontal lobe.1,-0.824,0.191
+Frontal lobe.2,-0.245,1.366
+Gingival epithelium.1,-0.591,0.51
+Gingival epithelium.2,0.205,2.445
+Head and neck epithelial cells.1,-1.106,2.323
+Head and neck epithelial cells.2,-0.744,3.359
+Heart atrium.1,-0.422,1.012
+Heart atrium.2,0.085,1.151
+Hippocampus.1,-1.208,-1.739
+Hippocampus.2,-0.448,0.196
+Hypothalamus.1,-0.959,-0.246
+Hypothalamus.2,-0.38,1.966
+Kidney.1,-1.127,-0.985
+Kidney.2,-0.114,1.4
+Kidney cortex.1,-1.123,-0.017
+Kidney cortex.2,-0.508,0.502
+Kidney medulla.1,-1.041,0.112
+Kidney medulla.2,-0.932,0.699
+Liver.1,-0.72,-0.914
+Liver.2,-0.032,1.539
+Lung.1,-0.578,-0.908
+Lung.2,0.436,-0.286
+Lymph nodes.1,1.195,1.036
+Lymph nodes.2,3.692,1.243
+Lymphocytes.1,1.334,-0.338
+Lymphocytes.2,3.65,2.012
+Mammary gland.1,-0.777,-1.895
+Mammary gland.2,-0.488,1.215
+Medial temporal gyrus.1,-0.106,-3.817
+Medial temporal gyrus.2,1.233,-1.432
+Medulla.1,-0.933,-0.12
+Medulla.2,-0.137,1.677
+Memory b cells.1,-0.42,0.194
+Memory b cells.2,1.498,1.852
+Mesenchymal stem cells.1,-0.704,-2.5
+Mesenchymal stem cells.2,-0.414,-1.118
+Midbrain.1,-1.142,0.505
+Midbrain.2,-0.563,3.615
+Monocytes.1,-0.18,-1.361
+Monocytes.2,0.942,-0.601
+Myometrium.1,-1.066,-1.384
+Myometrium.2,-0.052,0.517
+Naive b cells.1,-0.176,-0.698
+Naive b cells.2,0.62,-0.076
+Naive cd4+ t cells.1,-0.262,-0.22
+Naive cd4+ t cells.2,1.439,1.404
+Nasopharyngeal epithelial cells.1,-0.776,1.805
+Nasopharyngeal epithelial cells.2,-0.342,2.945
+Neurons.1,-1.139,0.468
+Neurons.2,2.046,1.228
+Neutrophils.1,-0.247,-0.557
+Neutrophils.2,0.984,0.203
+Nipple cross section.1,-0.622,-0.708
+Nipple cross section.2,0.138,0.19
+Nodose nucleus.1,-0.856,0.266
+Nodose nucleus.2,-0.531,2.27
+Occipital lobe.1,-0.977,-0.954
+Occipital lobe.2,-0.434,1.742
+Omental adipose tissue.1,0.15,-0.384
+Omental adipose tissue.2,4.493,4.108
+Oral mucosa.1,-0.814,0.454
+Oral mucosa.2,-0.597,0.73
+Ovary.1,-1.04,-1.175
+Ovary.2,0.263,-0.345
+Parietal lobe.1,-0.958,0.184
+Parietal lobe.2,-0.307,2.119
+Parotid gland.1,-0.615,-1.537
+Parotid gland.2,0.326,-0.915
+Pbmc.1,-0.075,0.715
+Pbmc.2,7.525,2.753
+Penis.1,-0.702,-1.176
+Penis.2,-0.05,0.379
+Pharyngeal mucosa.1,-0.672,0.273
+Pharyngeal mucosa.2,0.848,0.515
+Pituitary gland.1,-1.492,0.357
+Pituitary gland.2,0.716,3.018
+Placenta.1,-1.045,-1.902
+Placenta.2,0.366,0.102
+Plasma cells.1,-1.274,-0.081
+Plasma cells.2,-0.333,2.337
+Platelets.1,-0.837,0.088
+Platelets.2,0.647,1.609
+Postcentral gyrus.1,-1.3,-1.454
+Postcentral gyrus.2,-0.648,-0.625
+Posterior singulate.1,-0.861,-1.627
+Posterior singulate.2,-0.355,-0.452
+Primary visual cortex.1,-0.838,-2.285
+Primary visual cortex.2,-0.549,-1.076
+Promyelocytes.1,-0.263,-1.073
+Promyelocytes.2,0.316,-0.727
+Prostate gland.1,-1.134,-0.738
+Prostate gland.2,-0.229,-0.012
+Putamen.1,-0.678,0.286
+Putamen.2,-0.099,1.737
+Rectum.1,-0.063,-0.574
+Rectum.2,1.24,1.292
+Rectum mucosa.1,0.371,-0.199
+Rectum mucosa.2,0.805,0.078
+Saliva.1,-0.116,-0.007
+Saliva.2,2.635,6.109
+Salivary gland.1,-0.984,1.008
+Salivary gland.2,-0.622,2.321
+Saphenous vein.1,-1.391,-0.373
+Saphenous vein.2,0.419,-0.028
+Sigmoid colon.1,-1.135,-0.346
+Sigmoid colon.2,0.602,0.691
+Sigmoid colon mucosa.1,0.359,-0.25
+Sigmoid colon mucosa.2,0.793,0.338
+Sinus mucosa.1,-0.977,1.809
+Sinus mucosa.2,-0.434,2.708
+Skeletal muscle.1,-0.422,-0.703
+Skeletal muscle.2,0.158,1.094
+Skin.1,-0.797,-2.255
+Skin.2,0.216,-0.803
+Sperm.1,-0.557,-0.387
+Sperm.2,-0.122,1.617
+Spinal cord.1,-0.984,0.854
+Spinal cord.2,-0.622,1.822
+Spleen.1,-0.138,-0.207
+Spleen.2,0.875,0.692
+Stomach.1,-0.7,0.317
+Stomach.2,0.241,2.079
+Substantia nigra.1,-0.751,0.996
+Substantia nigra.2,-0.172,2.309
+Substantia nigra pars compacta.1,-0.239,-1.404
+Substantia nigra pars compacta.2,0.195,1.982
+Subthalamic nucleus.1,-1.166,0.801
+Subthalamic nucleus.2,-0.587,2.667
+Superior frontal gyrus.1,-1.209,-1.453
+Superior frontal gyrus.2,-0.593,-0.486
+Synovial membrane.1,-1.252,-0.76
+Synovial membrane.2,-0.672,0.173
+T cells.1,0.515,-0.604
+T cells.2,2.614,0.156
+Temporal lobe.1,-0.927,1.081
+Temporal lobe.2,-0.24,1.945
+Testes.1,-1.081,-0.86
+Testes.2,-0.574,-0.1
+Thalamus.1,-0.745,0.588
+Thalamus.2,-0.202,1.901
+Thyroid gland.1,-0.89,-1.253
+Thyroid gland.2,-0.13,1.132
+Tongue main corpus.1,-0.744,0.113
+Tongue main corpus.2,0.016,0.908
+Tongue squamous cells.1,-1.226,-0.824
+Tongue squamous cells.2,-0.43,1.076
+Tonsil.1,1.774,1.249
+Tonsil.2,2.136,2.079
+Tonsil epithelium.1,-0.96,0.736
+Tonsil epithelium.2,1.429,1.427
+Trachea.1,-0.838,-0.549
+Trachea.2,-0.476,-0.272
+Trigeminal ganglia.1,-0.715,-0.323
+Trigeminal ganglia.2,-0.208,0.645
+Urethra.1,-0.795,-1.199
+Urethra.2,-0.47,-0.647
+Vagina.1,-0.876,-1.231
+Vagina.2,-0.804,-0.056
+Vastus lateralis muscle.1,-1.311,1.012
+Vastus lateralis muscle.2,-0.442,3.016
+Ventral tegmental area.1,-1.104,0.989
+Ventral tegmental area.2,-0.38,2.129
+Vestibular nuclei superior.1,-1.101,0.578
+Vestibular nuclei superior.2,0.129,2.098
+Vulva.1,-0.677,-1.539
+Vulva.2,0.047,1.813

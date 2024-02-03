@@ -1,0 +1,215 @@
+{
+    "took": 15,
+    "total": 5,
+    "max_score": null,
+    "hits": [
+        {
+            "_id": "3601",
+            "_score": null,
+            "alias": "CD215",
+            "ensembl": {
+                "gene": "ENSG00000134470",
+                "protein": [
+                    "ENSP00000369306",
+                    "ENSP00000369312",
+                    "ENSP00000380420",
+                    "ENSP00000380421",
+                    "ENSP00000380422",
+                    "ENSP00000380423",
+                    "ENSP00000380426",
+                    "ENSP00000393612",
+                    "ENSP00000395113",
+                    "ENSP00000405107",
+                    "ENSP00000405128",
+                    "ENSP00000431529",
+                    "ENSP00000432691",
+                    "ENSP00000435454",
+                    "ENSP00000435995",
+                    "ENSP00000478525",
+                    "ENSP00000479839",
+                    "ENSP00000480949"
+                ],
+                "transcript": [
+                    "ENST00000379971",
+                    "ENST00000379972",
+                    "ENST00000379974",
+                    "ENST00000379977",
+                    "ENST00000397246",
+                    "ENST00000397248",
+                    "ENST00000397250",
+                    "ENST00000397251",
+                    "ENST00000397255",
+                    "ENST00000429135",
+                    "ENST00000435171",
+                    "ENST00000447291",
+                    "ENST00000453922",
+                    "ENST00000525219",
+                    "ENST00000528354",
+                    "ENST00000530685",
+                    "ENST00000532039",
+                    "ENST00000532948",
+                    "ENST00000534292",
+                    "ENST00000620345",
+                    "ENST00000620865",
+                    "ENST00000622442"
+                ],
+                "translation": [
+                    {
+                        "protein": "ENSP00000479839",
+                        "rna": "ENST00000620345"
+                    },
+                    {
+                        "protein": "ENSP00000393612",
+                        "rna": "ENST00000435171"
+                    },
+                    {
+                        "protein": "ENSP00000380423",
+                        "rna": "ENST00000397251"
+                    },
+                    {
+                        "protein": "ENSP00000380421",
+                        "rna": "ENST00000397248"
+                    },
+                    {
+                        "protein": "ENSP00000431529",
+                        "rna": "ENST00000525219"
+                    },
+                    {
+                        "protein": "ENSP00000369312",
+                        "rna": "ENST00000379977"
+                    },
+                    {
+                        "protein": "ENSP00000435454",
+                        "rna": "ENST00000528354"
+                    },
+                    {
+                        "protein": "ENSP00000405128",
+                        "rna": "ENST00000447291"
+                    },
+                    {
+                        "protein": "ENSP00000432691",
+                        "rna": "ENST00000532039"
+                    },
+                    {
+                        "protein": "ENSP00000380422",
+                        "rna": "ENST00000397250"
+                    },
+                    {
+                        "protein": "ENSP00000369306",
+                        "rna": "ENST00000379971"
+                    },
+                    {
+                        "protein": "ENSP00000380420",
+                        "rna": "ENST00000397246"
+                    },
+                    {
+                        "protein": "ENSP00000380426",
+                        "rna": "ENST00000397255"
+                    },
+                    {
+                        "protein": "ENSP00000435995",
+                        "rna": "ENST00000530685"
+                    },
+                    {
+                        "protein": "ENSP00000480949",
+                        "rna": "ENST00000622442"
+                    },
+                    {
+                        "protein": "ENSP00000478525",
+                        "rna": "ENST00000620865"
+                    },
+                    {
+                        "protein": "ENSP00000395113",
+                        "rna": "ENST00000429135"
+                    },
+                    {
+                        "protein": "ENSP00000405107",
+                        "rna": "ENST00000453922"
+                    }
+                ],
+                "type_of_gene": "protein_coding"
+            },
+            "name": "interleukin 15 receptor subunit alpha",
+            "symbol": "IL15RA",
+            "taxid": 9606
+        },
+        {
+            "_id": "3559",
+            "_score": null,
+            "alias": [
+                "CD25",
+                "IDDM10",
+                "IL2R",
+                "IMD41",
+                "TCGFR",
+                "p55"
+            ],
+            "ensembl": {
+                "gene": "ENSG00000134460",
+                "protein": [
+                    "ENSP00000256876",
+                    "ENSP00000369287",
+                    "ENSP00000369293",
+                    "ENSP00000402024",
+                    "ENSP00000513307"
+                ],
+                "transcript": [
+                    "ENST00000256876",
+                    "ENST00000379954",
+                    "ENST00000379959",
+                    "ENST00000447847",
+                    "ENST00000644262",
+                    "ENST00000649218",
+                    "ENST00000697424"
+                ],
+                "translation": [
+                    {
+                        "protein": "ENSP00000369293",
+                        "rna": "ENST00000379959"
+                    },
+                    {
+                        "protein": "ENSP00000369287",
+                        "rna": "ENST00000379954"
+                    },
+                    {
+                        "protein": "ENSP00000402024",
+                        "rna": "ENST00000447847"
+                    },
+                    {
+                        "protein": "ENSP00000256876",
+                        "rna": "ENST00000256876"
+                    },
+                    {
+                        "protein": "ENSP00000513307",
+                        "rna": "ENST00000697424"
+                    }
+                ],
+                "type_of_gene": "protein_coding"
+            },
+            "name": "interleukin 2 receptor subunit alpha",
+            "symbol": "IL2RA",
+            "taxid": 9606
+        },
+        {
+            "_id": "128462383",
+            "_score": null,
+            "name": "CRISPRi-FlowFISH-validated IL2RA regulatory element GRCh37_chr10:6094489-6094989",
+            "symbol": "LOC128462383",
+            "taxid": 9606
+        },
+        {
+            "_id": "128462384",
+            "_score": null,
+            "name": "CRISPRi-FlowFISH-validated IL2RA regulatory element GRCh37_chr10:6104083-6104713",
+            "symbol": "LOC128462384",
+            "taxid": 9606
+        },
+        {
+            "_id": "128462385",
+            "_score": null,
+            "name": "CRISPRi-FlowFISH-validated IL2RA regulatory element GRCh37_chr10:6125624-6126124",
+            "symbol": "LOC128462385",
+            "taxid": 9606
+        }
+    ]
+}
