@@ -14,6 +14,12 @@ from app.search.search import search
 logger = create_logger(__name__)
 
 
+def session_state_init():
+    if "result" not in st.session_state and "diff" not in st.session_state:
+        st.session_state["result"] = None
+        st.session_state["diff"] = None
+
+
 def header():
     st.header("# Gene Searcher")
     st.markdown(
@@ -42,22 +48,29 @@ def input_query() -> tuple:
     query = st.text_input("Query", placeholder=placeholder)
 
     # search button to trigger search
-    button = st.button("Search")
+    is_button_clicked = st.button("Search")
 
-    if "result" not in st.session_state and "diff" not in st.session_state:
-        st.session_state["result"] = None
-        st.session_state["diff"] = None
+    if query == "" or query is None:
+        return is_button_clicked, "", None, None
 
-    if button:
+    if is_button_clicked:
         with st.spinner("Searching..."):
             result, diff = search(query)
             st.session_state["result"] = result
             st.session_state["diff"] = diff
 
-    return query, st.session_state["result"], st.session_state["diff"]
+    return (
+        is_button_clicked,
+        query,
+        st.session_state["result"],
+        st.session_state["diff"],
+    )
 
 
-def search_result(query: str, result: dict, diff: float):
+def search_result(is_button_clicked: bool, query: str, result: dict, diff: float):
+    if is_button_clicked and query == "":
+        st.warning("Please input query!", icon="⚠️")
+
     st.markdown("## Search Results from Databases")
 
     # 検索にかかった時間
@@ -81,11 +94,13 @@ def search_result(query: str, result: dict, diff: float):
 
 
 def contents():
+    session_state_init()
+
     # header
     header()
 
     # search input
-    query, result, diff = input_query()
+    is_button_clicked, query, result, diff = input_query()
 
     # search results
-    search_result(query, result, diff)
+    search_result(is_button_clicked, query, result, diff)
