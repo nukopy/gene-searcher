@@ -28,7 +28,7 @@ def tab_innser_benchsci(query: str, result: dict):
     st.info("TODO: fetch & visualize data")
 
 
-def tab_search_result_vaccine(heading: str, query: str, result: dict):
+def tab_search_result_antibody(heading: str, query: str, result: dict):
     st.markdown(f"### {heading}")
 
     # search result

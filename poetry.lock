@@ -184,6 +184,25 @@ tests-mypy = ["mypy (>=1.6)", "pytest-mypy-plugins"]
 tests-no-zope = ["attrs[tests-mypy]", "cloudpickle", "hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-xdist[psutil]"]
 
 [[package]]
+name = "biothings-client"
+version = "0.3.1"
+description = "Python Client for BioThings API services."
+optional = false
+python-versions = ">=2.7"
+files = [
+    {file = "biothings_client-0.3.1-py2.py3-none-any.whl", hash = "sha256:c08437f652d9282da785e098288ef7cf3aa2a79f5d90c480eadfce96b846013e"},
+    {file = "biothings_client-0.3.1.tar.gz", hash = "sha256:c972bf2e02b6f9cc78f7f2fbc5ef02cc56fe4f8a2adcb8801ec902f4ab7011e6"},
+]
+
+[package.dependencies]
+requests = ">=2.3.0"
+
+[package.extras]
+caching = ["requests-cache (>=0.4.13)"]
+dataframe = ["pandas (>=0.18.0)"]
+jsonld = ["PyLD (>=0.7.2)"]
+
+[[package]]
 name = "blinker"
 version = "1.7.0"
 description = "Fast, simple object-to-object and broadcast signaling"
@@ -893,6 +912,20 @@ files = [
     {file = "multidict-6.0.4-cp39-cp39-win_amd64.whl", hash = "sha256:33029f5734336aa0d4c0384525da0387ef89148dc7191aae00ca5fb23d7aafc2"},
     {file = "multidict-6.0.4.tar.gz", hash = "sha256:3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"},
 ]
+
+[[package]]
+name = "mygene"
+version = "3.2.2"
+description = "Python Client for MyGene.Info services."
+optional = false
+python-versions = "*"
+files = [
+    {file = "mygene-3.2.2-py2.py3-none-any.whl", hash = "sha256:18d85d1b28ecee2be31d844607fb0c5f7d7c58573278432df819ee2a5e88fe46"},
+    {file = "mygene-3.2.2.tar.gz", hash = "sha256:e729cabbc28cf5afb221bca1ab637883b375cb1a3e2f067587ec79f71affdaea"},
+]
+
+[package.dependencies]
+biothings-client = ">=0.2.6"
 
 [[package]]
 name = "mypy"
@@ -2073,4 +2106,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "836da8d38b77abc8e2ef89eebf7d214cc5997daf135a3085b6402e9478e8ef8d"
+content-hash = "af2a7edec31a98be1ebb2615a857e2859e39a550f2f8fef2014d17e8a50512f9"
