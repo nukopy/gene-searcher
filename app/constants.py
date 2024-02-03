@@ -2,6 +2,7 @@
 DATA_SOURCE_NAME_ENSEMBL = "Ensembl"
 DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS = "The Human Protein Atlas"
 DATA_SOURCE_NAME_DICE = "DICE"
+DATA_SOURCE_NAME_MYGENEINFO = "MyGene.info"
 DATA_SOURCE_NAME_BIOGPS = "BioGPS"
 DATA_SOURCE_NAME_BENCHSCI = "BenchSci"
 
@@ -33,13 +34,17 @@ DATA_SOURCES: list[dict] = [
         ],
     },
     {
+        "name": DATA_SOURCE_NAME_MYGENEINFO,
+        "url": "https://mygene.info",
+        "version": "v3 (API)",
+        "release_date": "2023/01/17",
+    },
+    {
         "name": DATA_SOURCE_NAME_BIOGPS,
         "url": "https://biogps.org",
-        "version": "TODO",  # TODO: バージョン情報
-        "release_date": "TODO",
-        "datasets": [
-            "TODO",
-        ],
+        "version": "Not found",  # TODO: バージョン情報
+        "release_date": "Not found",
+        "datasets": ["MyGene.info v3 (API)", "http://biogps.org/dataset/"],
     },
     {
         "name": DATA_SOURCE_NAME_BENCHSCI,
