@@ -8,9 +8,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from app.constants import (
-    DATA_SOURCE_NAME_DICE,
-)
+from app.constants import CHART_BACKGROUND_COLOR, DATA_SOURCE_NAME_DICE
 from app.logger import create_logger
 
 logger = create_logger(__name__)
@@ -184,6 +182,9 @@ def tab_inner_dice(query: str, result: dict):
             "gridwidth": 1,
             "zeroline": True,
         },
+        # chart color
+        paper_bgcolor=CHART_BACKGROUND_COLOR,
+        plot_bgcolor=CHART_BACKGROUND_COLOR,
     )
     st.markdown("#### Data")
     st.plotly_chart(fig, use_container_width=False)

@@ -2,9 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from app.constants import (
-    DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS,
-)
+from app.constants import CHART_BACKGROUND_COLOR, DATA_SOURCE_NAME_HUMAN_PROTEIN_ATLAS
 from app.logger import create_logger
 from app.plot.human_protein_atlas import TISSUE_PLOT_ATTRIBUTES, modify_tissue_data_key
 from app.search.human_protein_atlas import (
@@ -130,6 +128,15 @@ def tab_inner_hpa(query: str, result: dict):
             "font_size": 14,
             "font_family": "'Open Sans', sans-serif",
         },
+        yaxis={
+            "showgrid": True,
+            "gridcolor": "LightGray",
+            "gridwidth": 1,
+            "zeroline": True,
+        },
+        # chart color
+        paper_bgcolor=CHART_BACKGROUND_COLOR,
+        plot_bgcolor=CHART_BACKGROUND_COLOR,
     )
 
     # write chart
