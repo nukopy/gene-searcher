@@ -1,12 +1,12 @@
 import streamlit as st
 
 from app.components.tabs import (
+    tab_search_result_antibody,
     tab_search_result_rna,
-    tab_search_result_vaccine,
 )
 from app.constants import (
+    TAB_NAME_ANTIBODY_LIST,
     TAB_NAME_RNA_EXPRESSION_DATA,
-    TAB_NAME_VACCINE_LIST,
 )
 from app.logger import create_logger
 from app.search.search import search
@@ -80,17 +80,17 @@ def search_result(is_button_clicked: bool, query: str, result: dict, diff: float
     # create tabs
     tab_list = [
         TAB_NAME_RNA_EXPRESSION_DATA,
-        TAB_NAME_VACCINE_LIST,
+        TAB_NAME_ANTIBODY_LIST,
     ]
-    tab_rna, tab_vaccine = st.tabs(tab_list)
+    tab_rna, tab_antibody = st.tabs(tab_list)
 
     # RNA Expression Data
     with tab_rna:
         tab_search_result_rna(TAB_NAME_RNA_EXPRESSION_DATA, query, result)
 
-    # Vaccine List
-    with tab_vaccine:
-        tab_search_result_vaccine(TAB_NAME_VACCINE_LIST, query, result)
+    # Antibody List
+    with tab_antibody:
+        tab_search_result_antibody(TAB_NAME_ANTIBODY_LIST, query, result)
 
 
 def contents():

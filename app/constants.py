@@ -60,7 +60,7 @@ DATA_SOURCES: list[dict] = [
 # for tabs in contents
 MESSAGE_BEFORE_SEARCH = "Please input query and click search button."
 TAB_NAME_RNA_EXPRESSION_DATA = "RNA Expression Data"
-TAB_NAME_VACCINE_LIST = "Vaccine List"
+TAB_NAME_ANTIBODY_LIST = "Antibody List"
 
 # for chart
 CHART_BACKGROUND_COLOR = "rgba(238,240,244,0.7)"
