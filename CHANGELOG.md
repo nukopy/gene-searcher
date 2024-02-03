@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.3.1](https://github.com/nukopy/gene-searcher/compare/v0.3.0...v0.3.1) - 2024-02-03
+
 ## [v0.3.0](https://github.com/nukopy/gene-searcher/compare/v0.2.1...v0.3.0) - 2024-02-03
 - Support DICE and BioGPS by @nukopy in https://github.com/nukopy/gene-searcher/pull/8
 
