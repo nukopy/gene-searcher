@@ -23,7 +23,7 @@ def header():
     )
 
 
-def input_query() -> str:
+def input_query() -> tuple:
     # search input
     # query_type = st.radio(
     #     "Query type",
@@ -37,7 +37,8 @@ def input_query() -> str:
 
     # search input
     # note: 各データベースの Web ページでは自由にクエリを使用できるので、一旦その仕様に合わせてクエリのタイプは区別せず入力する
-    placeholder = "Input gene name (e.g. IL2RA, CD25), Ensemble ID (e.g. ENSG00000134460), or keywords (e.g. 'lymphocyte activation')"
+    # placeholder = "Input gene symbol (e.g. IL2RA, CD25), Ensemble ID (e.g. ENSG00000134460), or keywords (e.g. 'lymphocyte activation')"
+    placeholder = "Input gene symbol (e.g. IL2RA, ERBB2)"
     query = st.text_input("Query", placeholder=placeholder)
 
     # search button to trigger search
