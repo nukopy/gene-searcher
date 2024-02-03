@@ -23,7 +23,7 @@ RESULT_KEY_GENE_ANOTATIONS = "gene-anotations"
 
 
 def sort_gene_anotations_by_ncbi_gene_id(gene_anotations: list) -> list:
-    # sort asc by "_id" (NCBI Gene ID)
+    # sort desc by "_id" (NCBI Gene ID)
     # return sorted(gene_anotations, key=lambda x: int(x["_id"]), reverse=False)
     # x["_id"] は基本数字文字列で、たまに ENSG00000134460 などの文字列が交じる
     return sorted(gene_anotations, key=lambda x: x["_id"], reverse=False)
