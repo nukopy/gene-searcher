@@ -36,5 +36,5 @@ class FetchUnexpectedError(Exception):
 # ------------------------------------------------------------------------
 
 
-class SearchError(Exception):
-    """Error occurred during searching data."""
+class FetchFromMyGeneError(Exception):
+    """Not found on BioGPS."""
