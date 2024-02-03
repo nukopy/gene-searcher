@@ -32,10 +32,10 @@ def tab_inner_dice(query: str, result: dict):
             """
             Status of search results may be "No data found..." if you search by gene synonyms and Ensembl ID.
 
-            Now, **gene-searcher doesn't support search by gene synonyms and Ensembl ID on DICE**.
-            You can search by query like `IL2RA`, but cannot search by query like `CD25` and `ENSG00000134460`.
+            Now, gene-searcher doesn't support search by gene synonyms and Ensembl ID on DICE.
+            You can search by query like `IL2RA` (**query is character sensitive**), but cannot search by query like `CD25` and `ENSG00000134460`.
 
-            **Please search by gene symbol name**.
+            Please search by upper-cased gene symbol name.
             """
         )
         return
